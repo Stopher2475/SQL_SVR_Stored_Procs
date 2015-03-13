@@ -1,6 +1,8 @@
 Create Procedure sp_Test_Procedure(@STARTDATE datetime)
 as
 BEGIN
-  Select * From tbl_Users 
-  Where StartDate >= @STARTDATE;
+  Select u.* 
+  FROM tbl_Users u
+  INNER JOIN tbl_Start_Dates s ON u.UserID = s.UserID 
+  WHERE u.StartDate >= @STARTDATE;
 END

@@ -1,0 +1,6 @@
+Create Procedure sp_Test_Procedure(@STARTDATE datetime)
+as
+BEGIN
+  Select * From tbl_Users 
+  Where StartDate >= @STARTDATE;
+END
